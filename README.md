@@ -1,5 +1,5 @@
 # React-Redux
-Basic revision of React and Redux 
+Basic revision of Redux  and some key points Reflection
 
 Action Creator:> Action Creator is a function that is going to create or return a plain javaScript object. We refer to this javascript object as the  an action. An action has type property and a payload property. Type property on an action describes some change that we might want to make inside of data. Payload property describes some context that we might want to make. 
 
@@ -11,18 +11,16 @@ Reducer: Reducer is the function that is responsible for taking in action and so
 
  Reducer is always going to be function, always have two arguments
 
+If the reducer is called for the very first time, it receives the value undefined,
+we need to default the value the first argument, just make it (= [ ])
+2nd option will replace the undefined with empty array.
 
-// if the reducer is called for the very first time, it receives the value undefined,
-// we need to default the value the first argument, just make it (= [ ])
-// 2nd option will replace the undefined with empty array.
-
-Very important… 
 When we want to add without mutating the array, it was easy
 […myarray, newthingthatistobeadded]
 
 When deleting, use the filter method (name => name !== action.payload.name)
 
- Overall goal of Reducer is to take some existing data, some action and then modify and return that existing data based upon the content of action.
+Overall goal of Reducer is to take some existing data, some action and then modify and return that existing data based upon the content of action.
 
 Store is the single object.
 Store in Redux is essentially the assembly of collection of different Reducer and action creator.
